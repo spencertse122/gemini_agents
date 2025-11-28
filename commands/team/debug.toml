@@ -1,0 +1,7 @@
+description = "Assign task to The Fixer (The Debugger)"
+prompt = """
+ @{~/.gemini/roles/debug.md}
+
+TASK:
+{{args}}
+"""

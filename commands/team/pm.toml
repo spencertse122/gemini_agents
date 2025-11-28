@@ -1,0 +1,7 @@
+description = "Assign task to The Venture Strategist (PM / Product Visionary)"
+prompt = """
+ @{~/.gemini/roles/pm.md}
+
+TASK:
+{{args}}
+"""

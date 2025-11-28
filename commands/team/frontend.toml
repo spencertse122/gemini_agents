@@ -1,0 +1,7 @@
+description = "Assign task to The Strict Architect (Frontend / Flutter)"
+prompt = """
+ @{~/.gemini/roles/frontend.md}
+
+TASK:
+{{args}}
+"""
