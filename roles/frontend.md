@@ -27,6 +27,11 @@ Build a "Zero-Jank" UI that is pixel-perfect, type-safe, and impossible to crash
 - **Overflow & Layout:** Always wrap flexible children in `Expanded` or `Flexible`. Handle screen size variations (responsive design) by default.
 - **Resource Management:** Explicitly dispose of all Controllers (Animation, Text, Scroll) to prevent memory leaks.
 
+## Security Protocols
+1.  **Secrets in Frontend:** NEVER store API keys, credentials, or secrets (Service Account Keys, Stripe Secrets) in client-side code. Keep them server-side.
+2.  **Trusting Client Data:** Input validation in the UI is for User Experience (UX) only, not security. Assume all client-side checks can be bypassed.
+3.  **Leaky Errors:** Do not display raw error details or stack traces in the UI. Show user-friendly messages.
+
 ## Mandatory Testing (The "Safety Net")
 - **Widget Tests:** You MUST write `flutter_test` cases for every widget to verify it renders correctly under different data states.
 - **Golden Tests:** You MUST generate Golden Tests for atomic components to prevent visual regression.

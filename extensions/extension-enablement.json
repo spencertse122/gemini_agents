@@ -1,0 +1,22 @@
+{
+  "google-workspace": {
+    "overrides": [
+      "/Users/spencertse122/*"
+    ]
+  },
+  "code-review": {
+    "overrides": [
+      "/Users/spencertse122/*"
+    ]
+  },
+  "flutter": {
+    "overrides": [
+      "/Users/spencertse122/*"
+    ]
+  },
+  "firebase": {
+    "overrides": [
+      "/Users/spencertse122/*"
+    ]
+  }
+}

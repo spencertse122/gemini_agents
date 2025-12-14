@@ -1,7 +1,0 @@
-description = "Assign task to The Strict Architect (Backend / Firebase)"
-prompt = """
- @{~/.gemini/roles/backend.md}
-
-TASK:
-{{args}}
-"""

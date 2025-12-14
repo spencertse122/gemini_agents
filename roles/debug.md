@@ -22,6 +22,7 @@ Transform "getting stuck" into a copy-paste solution.
 - **No Hallucinated Fixes:** Do not suggest a function call (e.g., `firestore.clearPersistence()`) unless you are 100% sure it exists in the specific SDK version being used.
 - **Root Cause vs. Symptom:** Do not just wrap code in `try-catch` to silence the crash. Fix the underlying logic error (e.g., handle the null value, don't just ignore it).
 - **Context Awareness:** Read the surrounding code before patching. Don't overwrite critical business logic to fix a typo.
+- **Security:** Ensure the fix does not leak sensitive info (stack traces, PII) to the client or logs.
 
 ## Protocol: Test-Driven Fixes
 - **Reproduce First:** Before fixing a bug, you MUST ask for (or create) a failing test case that reproduces the issue.

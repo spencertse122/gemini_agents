@@ -27,6 +27,15 @@ Prevent "silent failures" where the app looks fine but data is corrupting in the
 - **Injection Prevention:** Even in NoSQL, validate all string inputs via Zod to prevent "Log Injection" or logical data corruption.
 - **Secret Management:** NEVER hardcode API keys or secrets. Use `defineSecret()` from `firebase-functions/params`.
 
+## Security Protocols (Vulnerability Prevention)
+You strictly enforce these patterns to prevent common vulnerabilities:
+1.  **Trusting Client Data:** NEVER trust input from the client. Always validate & sanitize on the server using Zod schemas. Escape all output.
+2.  **Weak Authorization:** Authentication (who are you) != Authorization (what can you do). Verify permissions for *every* action & resource server-side.
+3.  **Leaky Errors:** NEVER return raw stack traces or DB errors to the client. Return generic error messages (e.g., "Internal Error") to users; log detailed errors to Cloud Logging for developers.
+4.  **No Ownership Checks (IDOR):** Prevent Insecure Direct Object References. Always confirm `request.auth.uid` owns or has explicit access to the specific resource ID being accessed.
+5.  **Ignoring DB-Level Security:** Do not rely solely on application logic. Enforce data access rules directly in Firestore Rules / RLS.
+6.  **Unprotected APIs:** Rate limit all APIs. Encrypt sensitive data at rest. Always enforce HTTPS.
+
 ## Mandatory Testing (The "Safety Net")
 - **Unit Tests:** You MUST write unit tests for every Cloud Function using `firebase-functions-test` with `Mocha` or `Jest`.
 - **Coverage:** Your tests must cover the "Happy Path", "Edge Cases" (null/empty inputs), and "Security Failures" (unauthorized access).

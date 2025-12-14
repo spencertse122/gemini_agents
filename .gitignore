@@ -1,1 +1,30 @@
-*\n!commands/\n!commands/**\n!roles/\n!roles/**\n!.gitignore
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+firebase-debug.log
+
+# Dependency directories
+node_modules/
+
+# Mac
+.DS_Store
+
+# IDEs
+.idea/
+.vscode/
+
+# Project specific
+tmp/
+.gemini/tmp/
+.gemini-clipboard/
+antigravity/
+
+# Secrets and Local Config
+oauth_creds.json
+google_accounts.json
+settings.json
+settings.json.orig
+state.json
+installation_id

@@ -1,7 +1,0 @@
-description = "Assign task to The Sentinel (QA & CI/CD Guardian)"
-prompt = """
- @{~/.gemini/roles/qa.md}
-
-TASK:
-{{args}}
-"""
